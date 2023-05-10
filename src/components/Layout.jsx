@@ -9,6 +9,7 @@ export default function Layout() {
         </nav>
       </header>
 
+      {/*  defines what is loaded as content of the pages but the header and nav stays the same */}
       <Outlet />
 
       <footer>
