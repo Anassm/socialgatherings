@@ -1,9 +1,30 @@
-import Button from '@mui/material/Button'
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
+
+import Home from "./components/Home.jsx"
+import Contact from "./components/Contact.jsx"
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <Home />,
+    // loader: rootLoader,
+    children: [
+      {
+        path: "contact",
+        element: <Contact />,
+        // loader: teamLoader,
+      },
+    ],
+  },
+]);
 
 function App() {
   return (
     <>
-      {/* <Button variant="outlined" size="large">hoi</Button> */}
+      <RouterProvider router={router} />
     </>
   );
 }
